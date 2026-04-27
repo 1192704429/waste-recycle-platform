@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.grabge.server.dao.RecycleDao">
+
+    <select id="findList" parameterType="com.grabge.server.dto.RecycleDTO" resultType="com.grabge.server.dto.RecycleDTO">
+        select
+        recycle.*
+        from recycle recycle
+        <where>
+            <if test="id != null and id != ''">and recycle.id = #{id}</if>
+            <if test="nickName != null and nickName != ''">and recycle.nick_name like concat('%',#{nickName},'%')</if>
+            <if test="recycleSex != null and recycleSex != ''">and recycle.recycle_sex = #{recycleSex}</if>
+            <if test="recycleAge != null and recycleAge != ''">and recycle.recycle_age = #{recycleAge}</if>
+            <if test="avatar != null and avatar != ''">and recycle.avatar = #{avatar}</if>
+            <if test="tel != null and tel != ''">and recycle.tel like concat('%',#{tel},'%')</if>
+            <if test="status != null and status != ''">and recycle.status = #{status}</if>
+            <if test="account != null and account != ''">and recycle.account = #{account}</if>
+            <if test="pwd != null and pwd != ''">and recycle.pwd = #{pwd}</if>
+            <if test="createTime != null and createTime != ''">and recycle.create_time = #{createTime}</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.grabge.server.dto.RecycleDTO" resultType="java.lang.Integer">
+        select count(*) from recycle recycle
+        <where>
+            <if test="id != null and id != ''">and recycle.id = #{id}</if>
+            <if test="nickName != null and nickName != ''">and recycle.nick_name like concat('%',#{nickName},'%')</if>
+            <if test="recycleSex != null and recycleSex != ''">and recycle.recycle_sex = #{recycleSex}</if>
+            <if test="recycleAge != null and recycleAge != ''">and recycle.recycle_age = #{recycleAge}</if>
+            <if test="avatar != null and avatar != ''">and recycle.avatar = #{avatar}</if>
+            <if test="tel != null and tel != ''">and recycle.tel like concat('%',#{tel},'%')</if>
+            <if test="status != null and status != ''">and recycle.status = #{status}</if>
+            <if test="account != null and account != ''">and recycle.account = #{account}</if>
+            <if test="pwd != null and pwd != ''">and recycle.pwd = #{pwd}</if>
+            <if test="createTime != null and createTime != ''">and recycle.create_time = #{createTime}</if>
+        </where>
+    </select>
+
+</mapper>

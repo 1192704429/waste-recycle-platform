@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.grabge.server.dao.OrdersDao">
+
+    <select id="findList" parameterType="com.grabge.server.dto.OrdersDTO" resultType="com.grabge.server.dto.OrdersDTO">
+        select
+        orders.*,
+        recycle.nick_name,
+        recycle.tel,
+        users.name,
+        users.head_img
+        from orders orders
+        left join recycle recycle on orders.recycle_id = recycle.id
+        left join users users on orders.user_id = users.id
+        <where>
+            <if test="id != null and id != ''">and orders.id = #{id}</if>
+            <if test="orderNo != null and orderNo != ''">and orders.order_no = #{orderNo}</if>
+            <if test="userId != null and userId != ''">and orders.user_id = #{userId}</if>
+            <if test="subTimeStart != null and subTimeStart != ''">and orders.sub_time_start = #{subTimeStart}</if>
+            <if test="subTimeEnd != null and subTimeEnd != ''">and orders.sub_time_end = #{subTimeEnd}</if>
+            <if test="info != null and info != ''">and orders.info = #{info}</if>
+            <if test="recycleId != null and recycleId != ''">and orders.recycle_id = #{recycleId}</if>
+            <if test="status != null">and orders.status = #{status}</if>
+            <if test="createTime != null and createTime != ''">and orders.create_time = #{createTime}</if>
+            <if test="address != null and address != ''">and orders.address = #{address}</if>
+            <if test="phone != null and phone != ''">and orders.phone like concat('%',#{phone},'%')</if>
+            <if test="nickName != null and nickName != ''">and recycle.nick_name like concat('%',#{nickName},'%')</if>
+            <if test="tel != null and tel != ''">and recycle.tel like concat('%',#{tel},'%')</if>
+            <if test="name != null and name != ''">and users.name like concat('%',#{name},'%')</if>
+            <if test="headImg != null and headImg != ''">and users.head_img = #{headImg}</if>
+        </where>
+        order by id desc
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.grabge.server.dto.OrdersDTO" resultType="java.lang.Integer">
+        select count(*) from orders orders
+        left join recycle recycle on orders.recycle_id = recycle.id
+		left join users users on orders.user_id = users.id
+        <where>
+            <if test="id != null and id != ''">and orders.id = #{id}</if>
+            <if test="orderNo != null and orderNo != ''">and orders.order_no = #{orderNo}</if>
+            <if test="userId != null and userId != ''">and orders.user_id = #{userId}</if>
+            <if test="subTimeStart != null and subTimeStart != ''">and orders.sub_time_start = #{subTimeStart}</if>
+            <if test="subTimeEnd != null and subTimeEnd != ''">and orders.sub_time_end = #{subTimeEnd}</if>
+            <if test="info != null and info != ''">and orders.info = #{info}</if>
+            <if test="recycleId != null and recycleId != ''">and orders.recycle_id = #{recycleId}</if>
+            <if test="status != null and status != ''">and orders.status = #{status}</if>
+            <if test="createTime != null and createTime != ''">and orders.create_time = #{createTime}</if>
+            <if test="address != null and address != ''">and orders.address = #{address}</if>
+            <if test="phone != null and phone != ''">and orders.phone like concat('%',#{phone},'%')</if>
+            <if test="nickName != null and nickName != ''">and recycle.nick_name like concat('%',#{nickName},'%')</if>
+            <if test="tel != null and tel != ''">and recycle.tel like concat('%',#{tel},'%')</if>
+            <if test="name != null and name != ''">and users.name like concat('%',#{name},'%')</if>
+            <if test="headImg != null and headImg != ''">and users.head_img = #{headImg}</if>
+        </where>
+    </select>
+
+</mapper>

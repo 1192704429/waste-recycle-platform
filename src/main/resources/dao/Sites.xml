@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.grabge.server.dao.SitesDao">
+
+    <select id="findList" parameterType="com.grabge.server.dto.SitesDTO" resultType="com.grabge.server.dto.SitesDTO">
+        select
+        sites.*
+        from sites sites
+        <where>
+            <if test="id != null and id != ''">and sites.id = #{id}</if>
+            <if test="name != null and name != ''">and sites.name like concat('%',#{name},'%')</if>
+            <if test="info != null and info != ''">and sites.info = #{info}</if>
+            <if test="address != null and address != ''">and sites.address = #{address}</if>
+            <if test="bannerImg != null and bannerImg != ''">and sites.banner_img = #{bannerImg}</if>
+            <if test="status != null and status != ''">and sites.status = #{status}</if>
+            <if test="longitude != null and longitude != ''">and sites.longitude = #{longitude}</if>
+            <if test="latitude != null and latitude != ''">and sites.latitude = #{latitude}</if>
+            <if test="createTime != null and createTime != ''">and sites.create_time = #{createTime}</if>
+        </where>
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.grabge.server.dto.SitesDTO" resultType="java.lang.Integer">
+        select count(*) from sites sites
+        <where>
+            <if test="id != null and id != ''">and sites.id = #{id}</if>
+            <if test="name != null and name != ''">and sites.name like concat('%',#{name},'%')</if>
+            <if test="info != null and info != ''">and sites.info = #{info}</if>
+            <if test="address != null and address != ''">and sites.address = #{address}</if>
+            <if test="bannerImg != null and bannerImg != ''">and sites.banner_img = #{bannerImg}</if>
+            <if test="status != null and status != ''">and sites.status = #{status}</if>
+            <if test="longitude != null and longitude != ''">and sites.longitude = #{longitude}</if>
+            <if test="latitude != null and latitude != ''">and sites.latitude = #{latitude}</if>
+            <if test="createTime != null and createTime != ''">and sites.create_time = #{createTime}</if>
+        </where>
+    </select>
+
+</mapper>

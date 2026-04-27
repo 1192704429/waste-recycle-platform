@@ -1,0 +1,166 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : new-server-mysql
+ Source Server Type    : MySQL
+ Source Server Version : 50744
+ Source Host           : 49.234.55.245:10086
+ Source Schema         : 20250217ljhs
+
+ Target Server Type    : MySQL
+ Target Server Version : 50744
+ File Encoding         : 65001
+
+ Date: 17/02/2025 15:25:49
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for admins
+-- ----------------------------
+DROP TABLE IF EXISTS `admins`;
+CREATE TABLE `admins`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `user_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户名',
+  `pass_word` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '密码',
+  `head_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '头像(img)',
+  `nick_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '姓名',
+  `create_time` datetime(0) NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '创建时间',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '管理员' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of admins
+-- ----------------------------
+INSERT INTO `admins` VALUES (1, 'admin', 'admin', '', 'admin', '2025-02-17 15:11:49');
+
+-- ----------------------------
+-- Table structure for knowledge
+-- ----------------------------
+DROP TABLE IF EXISTS `knowledge`;
+CREATE TABLE `knowledge`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '科普知识编号',
+  `banner_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '封面图片',
+  `type_id` bigint(20) NULL DEFAULT NULL COMMENT '所属分类',
+  `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '内容',
+  `info` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '简介',
+  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '标题',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 109 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '科普知识管理' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for notice
+-- ----------------------------
+DROP TABLE IF EXISTS `notice`;
+CREATE TABLE `notice`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '公告编号',
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '标题',
+  `notice_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '封面图片',
+  `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '内容',
+  `info` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '简介',
+  `status` int(11) NULL DEFAULT NULL COMMENT '状态[0:隐藏,1:正常]',
+  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 109 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '公告管理' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for orders
+-- ----------------------------
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE `orders`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '订单编号',
+  `order_no` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '订单号',
+  `user_id` bigint(20) NULL DEFAULT NULL COMMENT '下单用户',
+  `sub_time_start` datetime(0) NULL DEFAULT NULL COMMENT '预约开始时间',
+  `sub_time_end` datetime(0) NULL DEFAULT NULL COMMENT '预约结束时间',
+  `info` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '内容',
+  `recycle_id` bigint(20) NULL DEFAULT NULL COMMENT '回收员编号',
+  `status` int(11) NULL DEFAULT NULL COMMENT '状态[0:已下单,1:已接单,2:已取消,3:已取货,4:已完成]',
+  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '取货地址',
+  `phone` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '联系方式',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '回收订单' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for recycle
+-- ----------------------------
+DROP TABLE IF EXISTS `recycle`;
+CREATE TABLE `recycle`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '回收员编号',
+  `nick_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '姓名',
+  `recycle_sex` int(11) NULL DEFAULT NULL COMMENT '性别[0:男,1:女]',
+  `recycle_age` int(11) NULL DEFAULT NULL COMMENT '年龄',
+  `avatar` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '头像',
+  `tel` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '联系方式',
+  `status` int(11) NULL DEFAULT NULL COMMENT '状态[0:封禁,1:正常]',
+  `account` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '账号',
+  `pwd` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '密码',
+  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '回收员管理' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for sites
+-- ----------------------------
+DROP TABLE IF EXISTS `sites`;
+CREATE TABLE `sites`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '站点编号',
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '站点名称',
+  `info` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '站点简介',
+  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '所处位置',
+  `banner_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '封面图',
+  `status` int(11) NULL DEFAULT NULL COMMENT '站点状态[0:停用,1:禁用]',
+  `longitude` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '经度',
+  `latitude` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '纬度',
+  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '站点管理' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for suggest
+-- ----------------------------
+DROP TABLE IF EXISTS `suggest`;
+CREATE TABLE `suggest`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '建议编号',
+  `user_id` bigint(20) NULL DEFAULT NULL COMMENT '用户编号',
+  `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '内容',
+  `admin_info` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '管理员回复',
+  `status` int(11) NULL DEFAULT NULL COMMENT '状态[0:未处理,1:已处理]',
+  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '反馈建议' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for types
+-- ----------------------------
+DROP TABLE IF EXISTS `types`;
+CREATE TABLE `types`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '分类编号',
+  `type_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '分类名称',
+  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '科普知识分类' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for users
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users`  (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '用户编号',
+  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '姓名',
+  `sex` int(11) NULL DEFAULT NULL COMMENT '性别[0:男,1:女]',
+  `age` int(11) NULL DEFAULT NULL COMMENT '年龄',
+  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '账号',
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '密码',
+  `head_img` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '头像',
+  `phone` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '联系方式',
+  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '住址',
+  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户管理' ROW_FORMAT = Dynamic;
+
+SET FOREIGN_KEY_CHECKS = 1;

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.grabge.server.dao.SuggestDao">
+
+    <select id="findList" parameterType="com.grabge.server.dto.SuggestDTO" resultType="com.grabge.server.dto.SuggestDTO">
+        select
+        suggest.*,
+        users.name,
+        users.head_img
+        from suggest suggest
+        left join users users on suggest.user_id = users.id
+        <where>
+            <if test="id != null and id != ''">and suggest.id = #{id}</if>
+            <if test="userId != null and userId != ''">and suggest.user_id = #{userId}</if>
+            <if test="content != null and content != ''">and suggest.content like concat('%',#{content},'%')</if>
+            <if test="adminInfo != null and adminInfo != ''">and suggest.admin_info = #{adminInfo}</if>
+            <if test="status != null and status != ''">and suggest.status = #{status}</if>
+            <if test="createTime != null and createTime != ''">and suggest.create_time = #{createTime}</if>
+            <if test="name != null and name != ''">and users.name like concat('%',#{name},'%')</if>
+            <if test="headImg != null and headImg != ''">and users.head_img = #{headImg}</if>
+        </where>
+        order by id desc
+        <if test="current != null and pageSize != null">
+            limit #{current},#{pageSize}
+        </if>
+    </select>
+
+    <select id="findPageCount" parameterType="com.grabge.server.dto.SuggestDTO" resultType="java.lang.Integer">
+        select count(*) from suggest suggest
+        left join users users on suggest.user_id = users.id
+        <where>
+            <if test="id != null and id != ''">and suggest.id = #{id}</if>
+            <if test="userId != null and userId != ''">and suggest.user_id = #{userId}</if>
+            <if test="content != null and content != ''">and suggest.content = #{content}</if>
+            <if test="adminInfo != null and adminInfo != ''">and suggest.admin_info = #{adminInfo}</if>
+            <if test="status != null and status != ''">and suggest.status = #{status}</if>
+            <if test="createTime != null and createTime != ''">and suggest.create_time = #{createTime}</if>
+            <if test="name != null and name != ''">and users.name like concat('%',#{name},'%')</if>
+            <if test="headImg != null and headImg != ''">and users.head_img = #{headImg}</if>
+        </where>
+    </select>
+
+</mapper>
