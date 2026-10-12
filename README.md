@@ -19,7 +19,7 @@
 | 回收员端 | 回收员 |
 
 
-![功能模块图](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/azhou_promotion/img/module_structure/func_module_b842614d1f1a49a2b3ba1e408a5cdd12.png)
+![功能模块图](docs/images/01-func-module.png)
 
 
 ## 三、技术栈说明
@@ -51,51 +51,51 @@
 
 登录页：管理员输入账号密码登录废品回收后台
 
-![登录页：管理员输入账号密码登录废品回收后台](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/4bc28dda-7e0f-4a1d-8b6a-ea8670373a6d.png)
+![登录页：管理员输入账号密码登录废品回收后台](docs/images/02-deng-lu.png)
 
 首页：展示用户信息与下单量的相关统计数据
 
-![首页：展示用户信息与下单量的相关统计数据](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/e6d6db93-df02-457d-8f6c-372bec79cf89.png)
+![首页：展示用户信息与下单量的相关统计数据](docs/images/03-shou-ye.png)
 
 用户管理页：管理员对平台用户信息进行查看和管理
 
-![用户管理页：管理员对平台用户信息进行查看和管理](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/e05f4c7e-1372-4acc-8bba-8634a4062d77.png)
+![用户管理页：管理员对平台用户信息进行查看和管理](docs/images/04-yong-hu-guan-li.png)
 
 回收员管理：管理员查看并管理平台的回收员信息
 
-![回收员管理：管理员查看并管理平台的回收员信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/1d99f39a-298b-48b1-8d92-daf833573639.png)
+![回收员管理：管理员查看并管理平台的回收员信息](docs/images/05-hui-shou-yuan-guan-li.png)
 
 站点管理页：管理员管理废品回收站点的相关信息
 
-![站点管理页：管理员管理废品回收站点的相关信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/138f2e95-47f0-4ae0-8027-6cf864c13cb2.png)
+![站点管理页：管理员管理废品回收站点的相关信息](docs/images/06-zhan-dian-guan-li.png)
 
 回收站点管理页：管理员管理回收站点，添加新站点地图位置
 
-![回收站点管理页：管理员管理回收站点，添加新站点地图位置](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/08280e82-90fc-42a5-8155-8c79d5069825.png)
+![回收站点管理页：管理员管理回收站点，添加新站点地图位置](docs/images/07-hui-shou-zhan-dian-guan-li.png)
 
 科普知识管理：修改科普知识的标题、封面及内容信息
 
-![科普知识管理：修改科普知识的标题、封面及内容信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/2e98216a-214d-4249-817b-c7c0eb0d69b8.png)
+![科普知识管理：修改科普知识的标题、封面及内容信息](docs/images/08-ke-pu-zhi-shi-guan-li.png)
 
 科普知识管理：管理科普知识分类，支持增删改查操作
 
-![科普知识管理：管理科普知识分类，支持增删改查操作](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/1cde3711-bddd-4d4f-883f-00c63af3256f.png)
+![科普知识管理：管理科普知识分类，支持增删改查操作](docs/images/09-ke-pu-zhi-shi-guan-li.png)
 
 科普知识管理页：管理员管理平台的废品回收科普知识
 
-![科普知识管理页：管理员管理平台的废品回收科普知识](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/a438639c-0995-4470-8f2a-58cb74f1551a.png)
+![科普知识管理页：管理员管理平台的废品回收科普知识](docs/images/10-ke-pu-zhi-shi-guan-li.png)
 
 订单管理页：管理员查看管理平台上门回收订单
 
-![订单管理页：管理员查看管理平台上门回收订单](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/9fafb47a-ffe7-4596-8ad4-2a84ec91fb5e.png)
+![订单管理页：管理员查看管理平台上门回收订单](docs/images/11-ding-dan-guan-li.png)
 
 反馈管理页：查看处理用户提交的平台反馈建议
 
-![反馈管理页：查看处理用户提交的平台反馈建议](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/b11b1e02-7e48-4e00-8a58-73e65d01c393.png)
+![反馈管理页：查看处理用户提交的平台反馈建议](docs/images/12-fan-kui-guan-li.png)
 
 公告管理页：管理员查看和管理平台的公告信息
 
-![公告管理页：管理员查看和管理平台的公告信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/92970005-7e73-4545-84ee-4cfbe1fd24d5.png)
+![公告管理页：管理员查看和管理平台的公告信息](docs/images/13-gong-gao-guan-li.png)
 
 
 ###### 用户端
@@ -116,43 +116,43 @@
 
 登录页：用户输入账号密码，登录废品回收平台
 
-![登录页：用户输入账号密码，登录废品回收平台](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/8a0d31d3-d930-4ead-86d0-c9e4572a0bcd.png)
+![登录页：用户输入账号密码，登录废品回收平台](docs/images/14-deng-lu.png)
 
 首页：展示轮播图与环保科普知识列表
 
-![首页：展示轮播图与环保科普知识列表](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/4a38ea00-e56a-4a50-8166-397b0248f013.png)
+![首页：展示轮播图与环保科普知识列表](docs/images/15-shou-ye.png)
 
 详情页：查看垃圾分类相关的环保科普知识详情
 
-![详情页：查看垃圾分类相关的环保科普知识详情](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/c99dc549-1232-40c1-8293-854525b7ad73.png)
+![详情页：查看垃圾分类相关的环保科普知识详情](docs/images/16-xiang-qing.png)
 
 站点列表页：展示回收站点信息，支持搜索查询站点
 
-![站点列表页：展示回收站点信息，支持搜索查询站点](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/90c5c809-5727-4757-8842-210f464988e3.png)
+![站点列表页：展示回收站点信息，支持搜索查询站点](docs/images/17-zhan-dian-lie-biao.png)
 
 站点详情页：查看目标回收站点的详情信息和地图位置
 
-![站点详情页：查看目标回收站点的详情信息和地图位置](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/3dc0d03b-5468-4bde-863b-9213e4f4607b.png)
+![站点详情页：查看目标回收站点的详情信息和地图位置](docs/images/18-zhan-dian-xiang-qing.png)
 
 公告详情页：展示垃圾回收平台维护通知的详细内容
 
-![公告详情页：展示垃圾回收平台维护通知的详细内容](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/fe119368-8319-4f04-82e6-dcbe8c4f1bf8.png)
+![公告详情页：展示垃圾回收平台维护通知的详细内容](docs/images/19-gong-gao-xiang-qing.png)
 
 订单页：填写订单信息，新增上门废品回收订单
 
-![订单页：填写订单信息，新增上门废品回收订单](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/9cb8be77-cc25-4864-81bc-f5483a7d7e5f.png)
+![订单页：填写订单信息，新增上门废品回收订单](docs/images/20-ding-dan.png)
 
 订单管理页：查看管理个人的废品上门回收订单
 
-![订单管理页：查看管理个人的废品上门回收订单](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/83bacb89-6e9d-4d3f-8efc-0151656cc5b0.png)
+![订单管理页：查看管理个人的废品上门回收订单](docs/images/21-ding-dan-guan-li.png)
 
 个人中心页：修改个人信息，提交更新个人资料
 
-![个人中心页：修改个人信息，提交更新个人资料](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/3b770e0f-4cb9-47bc-8be3-b28aa9b4b941.png)
+![个人中心页：修改个人信息，提交更新个人资料](docs/images/22-ge-ren-zhong-xin.png)
 
 意见反馈页：查看个人提交的意见反馈及处理状态
 
-![意见反馈页：查看个人提交的意见反馈及处理状态](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/81e67d06-ecb4-4cac-8701-f6d6effd56d8.png)
+![意见反馈页：查看个人提交的意见反馈及处理状态](docs/images/23-yi-jian-fan-kui.png)
 
 
 ###### 回收员端
@@ -170,15 +170,15 @@
 
 接单中心页：展示可接订单，供接单员接单操作
 
-![接单中心页：展示可接订单，供接单员接单操作](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/160d94f4-69ac-4969-8754-41ee71c88d02.png)
+![接单中心页：展示可接订单，供接单员接单操作](docs/images/24-jie-dan-zhong-xin.png)
 
 订单页：查看我承接的废品回收订单信息
 
-![订单页：查看我承接的废品回收订单信息](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/d2524848-961c-4e6f-8d58-9c32b84ef34c.png)
+![订单页：查看我承接的废品回收订单信息](docs/images/25-ding-dan.png)
 
 个人中心页：修改个人信息以及修改账号登录密码
 
-![个人中心页：修改个人信息以及修改账号登录密码](https://code-graden-server-dev.oss-cn-beijing.aliyuncs.com/2026-04-27/264d0c37-e490-4308-8236-f7540f3789d2.png)
+![个人中心页：修改个人信息以及修改账号登录密码](docs/images/26-ge-ren-zhong-xin.png)
 
 
 ## 五、主要业务流程
